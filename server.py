@@ -23,6 +23,9 @@ from datetime import datetime, timedelta, timezone
 from typing import Optional
 
 from mcp.server.fastmcp import FastMCP
+import sys, os
+sys.path.insert(0, os.path.expanduser("~/clawd/meok-labs-engine/shared"))
+from auth_middleware import check_access
 
 # Tier authentication (connects to Stripe subscriptions)
 try:
@@ -272,8 +275,7 @@ def assess_trust_principles(
     principles_in_scope: Optional[list[str]] = None,
     controls_implemented: Optional[dict[str, list[str]]] = None,
     caller: str = "anonymous",
-    tier: str = "free",
-) -> str:
+    tier: str = "free", api_key: str = "") -> str:
     """Audit an AI system against the 5 SOC 2 Trust Service Criteria: Security
     (Common Criteria), Availability, Processing Integrity, Confidentiality,
     and Privacy. Returns compliance status per principle with AI-specific findings.
@@ -285,6 +287,9 @@ def assess_trust_principles(
         caller: Caller identifier for rate limiting
         tier: Access tier (free/pro)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
     if err := _check_rate_limit(caller, tier):
         return json.dumps({"error": err})
 
@@ -366,8 +371,7 @@ def control_gap_analysis(
     target_type: str = "type2",
     principles_in_scope: Optional[list[str]] = None,
     caller: str = "anonymous",
-    tier: str = "free",
-) -> str:
+    tier: str = "free", api_key: str = "") -> str:
     """Gap analysis against SOC 2 controls. Compares implemented controls to
     required criteria and produces a prioritized remediation plan.
 
@@ -378,6 +382,9 @@ def control_gap_analysis(
         caller: Caller identifier for rate limiting
         tier: Access tier (free/pro)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
     if err := _check_rate_limit(caller, tier):
         return json.dumps({"error": err})
 
@@ -477,8 +484,7 @@ def generate_control_matrix(
     principles_in_scope: Optional[list[str]] = None,
     include_evidence: bool = True,
     caller: str = "anonymous",
-    tier: str = "free",
-) -> str:
+    tier: str = "free", api_key: str = "") -> str:
     """Generate a SOC 2 control matrix with control objectives, criteria,
     control activities, and evidence requirements. Suitable for auditor
     preparation and internal control documentation.
@@ -490,6 +496,9 @@ def generate_control_matrix(
         caller: Caller identifier for rate limiting
         tier: Access tier (free/pro)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
     if err := _check_rate_limit(caller, tier):
         return json.dumps({"error": err})
 
@@ -565,8 +574,7 @@ def risk_assessment(
     known_risks: Optional[list[str]] = None,
     ai_specific: bool = True,
     caller: str = "anonymous",
-    tier: str = "free",
-) -> str:
+    tier: str = "free", api_key: str = "") -> str:
     """SOC 2 risk assessment per AICPA guidelines. Identifies risks to Trust
     Service Criteria, assesses likelihood and impact, and maps to specific
     SOC 2 control requirements.
@@ -579,6 +587,9 @@ def risk_assessment(
         caller: Caller identifier for rate limiting
         tier: Access tier (free/pro)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
     if err := _check_rate_limit(caller, tier):
         return json.dumps({"error": err})
 
@@ -660,8 +671,7 @@ def crosswalk_to_iso27001(
     soc2_series: Optional[list[str]] = None,
     focus_principle: str = "all",
     caller: str = "anonymous",
-    tier: str = "free",
-) -> str:
+    tier: str = "free", api_key: str = "") -> str:
     """Map SOC 2 controls to ISO 27001 Annex A controls. Shows how SOC 2
     compliance overlaps with ISO 27001 certification requirements, enabling
     organizations pursuing dual compliance to identify shared controls.
@@ -672,6 +682,9 @@ def crosswalk_to_iso27001(
         caller: Caller identifier for rate limiting
         tier: Access tier (free/pro)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
     if err := _check_rate_limit(caller, tier):
         return json.dumps({"error": err})
 
@@ -725,8 +738,7 @@ def readiness_checklist(
     ai_system: bool = True,
     current_certifications: Optional[list[str]] = None,
     caller: str = "anonymous",
-    tier: str = "free",
-) -> str:
+    tier: str = "free", api_key: str = "") -> str:
     """SOC 2 Type I/II readiness assessment. Generates a comprehensive
     pre-audit checklist with timeline, resource requirements, and
     AI-specific considerations.
@@ -739,6 +751,9 @@ def readiness_checklist(
         caller: Caller identifier for rate limiting
         tier: Access tier (free/pro)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
     if err := _check_rate_limit(caller, tier):
         return json.dumps({"error": err})
 
