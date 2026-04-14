@@ -1,1 +1,200 @@
-{"name":"soc2-compliance-ai-mcp","vendor":"MEOK AI Labs","homepage":"https://meok.ai","repository":"https://github.com/CSOAI-ORG/soc2-compliance-ai-mcp","runtime":"python","entrypoint":"server.py"}
+{
+  "name": "soc2-compliance-ai-mcp",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** -- Sovereign AI tools for everyone.",
+  "version": "1.0.0",
+  "tools": [
+    {
+      "name": "assess_trust_principles",
+      "description": "Audit an AI system against the 5 SOC 2 Trust Service Criteria: Security",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "system_description": {
+            "type": "string"
+          },
+          "principles_in_scope": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "controls_implemented": {
+            "type": "object",
+            "nullable": true
+          },
+          "caller": {
+            "type": "string"
+          },
+          "tier": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "system_description"
+        ]
+      }
+    },
+    {
+      "name": "control_gap_analysis",
+      "description": "Gap analysis against SOC 2 controls. Compares implemented controls to",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "implemented_controls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "target_type": {
+            "type": "string"
+          },
+          "principles_in_scope": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "caller": {
+            "type": "string"
+          },
+          "tier": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "implemented_controls"
+        ]
+      }
+    },
+    {
+      "name": "generate_control_matrix",
+      "description": "Generate a SOC 2 control matrix with control objectives, criteria,",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "organization_name": {
+            "type": "string"
+          },
+          "principles_in_scope": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "include_evidence": {
+            "type": "boolean"
+          },
+          "caller": {
+            "type": "string"
+          },
+          "tier": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "organization_name"
+        ]
+      }
+    },
+    {
+      "name": "risk_assessment",
+      "description": "SOC 2 risk assessment per AICPA guidelines. Identifies risks to Trust",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "system_description": {
+            "type": "string"
+          },
+          "service_commitments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "known_risks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "ai_specific": {
+            "type": "boolean"
+          },
+          "caller": {
+            "type": "string"
+          },
+          "tier": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "system_description",
+          "service_commitments"
+        ]
+      }
+    },
+    {
+      "name": "crosswalk_to_iso27001",
+      "description": "Map SOC 2 controls to ISO 27001 Annex A controls. Shows how SOC 2",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "soc2_series": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "focus_principle": {
+            "type": "string"
+          },
+          "caller": {
+            "type": "string"
+          },
+          "tier": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "readiness_checklist",
+      "description": "SOC 2 Type I/II readiness assessment. Generates a comprehensive",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "audit_type": {
+            "type": "string"
+          },
+          "organization_maturity": {
+            "type": "string"
+          },
+          "ai_system": {
+            "type": "boolean"
+          },
+          "current_certifications": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "caller": {
+            "type": "string"
+          },
+          "tier": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    }
+  ]
+}

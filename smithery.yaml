@@ -1,8 +1,116 @@
 name: soc2-compliance-ai-mcp
-description: MEOK AI Labs — soc2 compliance
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/soc2-compliance-ai-mcp
-license: MIT
-runtime: python
-entrypoint: server.py
+description: '> **By [MEOK AI Labs](https://meok.ai)** -- Sovereign AI tools for everyone.'
+version: 1.0.0
+tools:
+- name: assess_trust_principles
+  description: 'Audit an AI system against the 5 SOC 2 Trust Service Criteria: Security'
+  parameters:
+  - name: system_description
+    type: string
+    required: true
+  - name: principles_in_scope
+    type: array
+    required: false
+  - name: controls_implemented
+    type: object
+    required: false
+  - name: caller
+    type: string
+    required: false
+  - name: tier
+    type: string
+    required: false
+- name: control_gap_analysis
+  description: Gap analysis against SOC 2 controls. Compares implemented controls
+    to
+  parameters:
+  - name: implemented_controls
+    type: array
+    required: true
+  - name: target_type
+    type: string
+    required: false
+  - name: principles_in_scope
+    type: array
+    required: false
+  - name: caller
+    type: string
+    required: false
+  - name: tier
+    type: string
+    required: false
+- name: generate_control_matrix
+  description: Generate a SOC 2 control matrix with control objectives, criteria,
+  parameters:
+  - name: organization_name
+    type: string
+    required: true
+  - name: principles_in_scope
+    type: array
+    required: false
+  - name: include_evidence
+    type: boolean
+    required: false
+  - name: caller
+    type: string
+    required: false
+  - name: tier
+    type: string
+    required: false
+- name: risk_assessment
+  description: SOC 2 risk assessment per AICPA guidelines. Identifies risks to Trust
+  parameters:
+  - name: system_description
+    type: string
+    required: true
+  - name: service_commitments
+    type: array
+    required: true
+  - name: known_risks
+    type: array
+    required: false
+  - name: ai_specific
+    type: boolean
+    required: false
+  - name: caller
+    type: string
+    required: false
+  - name: tier
+    type: string
+    required: false
+- name: crosswalk_to_iso27001
+  description: Map SOC 2 controls to ISO 27001 Annex A controls. Shows how SOC 2
+  parameters:
+  - name: soc2_series
+    type: array
+    required: false
+  - name: focus_principle
+    type: string
+    required: false
+  - name: caller
+    type: string
+    required: false
+  - name: tier
+    type: string
+    required: false
+- name: readiness_checklist
+  description: SOC 2 Type I/II readiness assessment. Generates a comprehensive
+  parameters:
+  - name: audit_type
+    type: string
+    required: false
+  - name: organization_maturity
+    type: string
+    required: false
+  - name: ai_system
+    type: boolean
+    required: false
+  - name: current_certifications
+    type: array
+    required: false
+  - name: caller
+    type: string
+    required: false
+  - name: tier
+    type: string
+    required: false

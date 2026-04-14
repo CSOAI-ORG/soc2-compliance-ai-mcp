@@ -289,9 +289,9 @@ def assess_trust_principles(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     if err := _check_rate_limit(caller, tier):
-        return json.dumps({"error": err})
+        return {"error": err}
 
     scope = principles_in_scope or ["CC", "A", "PI", "C", "P"]
     implemented = controls_implemented or {}
@@ -359,7 +359,7 @@ def assess_trust_principles(
         ),
     }
 
-    return json.dumps(results, indent=2)
+    return results
 
 
 # ---------------------------------------------------------------------------
@@ -384,9 +384,9 @@ def control_gap_analysis(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     if err := _check_rate_limit(caller, tier):
-        return json.dumps({"error": err})
+        return {"error": err}
 
     implemented = set(implemented_controls)
     scope = principles_in_scope or ["CC", "A", "PI", "C", "P"]
@@ -472,7 +472,7 @@ def control_gap_analysis(
         "readiness": "Ready" if coverage >= 90 else "Near-ready" if coverage >= 75 else "Significant work needed",
     }
 
-    return json.dumps(results, indent=2)
+    return results
 
 
 # ---------------------------------------------------------------------------
@@ -498,9 +498,9 @@ def generate_control_matrix(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     if err := _check_rate_limit(caller, tier):
-        return json.dumps({"error": err})
+        return {"error": err}
 
     scope = principles_in_scope or ["CC", "A", "PI", "C", "P"]
 
@@ -561,7 +561,7 @@ def generate_control_matrix(
 
         matrix["principles"].append(principle_entry)
 
-    return json.dumps(matrix, indent=2)
+    return matrix
 
 
 # ---------------------------------------------------------------------------
@@ -589,9 +589,9 @@ def risk_assessment(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     if err := _check_rate_limit(caller, tier):
-        return json.dumps({"error": err})
+        return {"error": err}
 
     standard_risks = [
         {"risk": "Unauthorized access to systems or data", "principle": "CC", "series": "CC6", "likelihood": "high", "impact": "high"},
@@ -660,7 +660,7 @@ def risk_assessment(
         ),
     }
 
-    return json.dumps(result, indent=2)
+    return result
 
 
 # ---------------------------------------------------------------------------
@@ -684,9 +684,9 @@ def crosswalk_to_iso27001(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     if err := _check_rate_limit(caller, tier):
-        return json.dumps({"error": err})
+        return {"error": err}
 
     if soc2_series:
         target_keys = soc2_series
@@ -725,7 +725,7 @@ def crosswalk_to_iso27001(
         },
     }
 
-    return json.dumps(result, indent=2)
+    return result
 
 
 # ---------------------------------------------------------------------------
@@ -753,9 +753,9 @@ def readiness_checklist(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
     if err := _check_rate_limit(caller, tier):
-        return json.dumps({"error": err})
+        return {"error": err}
 
     certs = set(current_certifications or [])
     has_iso = any("27001" in c for c in certs)
@@ -858,7 +858,7 @@ def readiness_checklist(
             "key_gaps": ["SOC 2 Availability criteria", "SOC 2 Processing Integrity criteria", "SOC 2 Privacy criteria (use ISO 27701)"],
         }
 
-    return json.dumps(checklist, indent=2)
+    return checklist
 
 
 # ---------------------------------------------------------------------------
