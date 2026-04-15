@@ -1,6 +1,6 @@
 {
   "name": "soc2-compliance-ai-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 \n        ",
+  "description": "MCP server for soc2 compliance ai. Features assess trust principles, control gap analysis, generate control matrix. From MEOK AI Labs.",
   "version": "1.0.0",
   "tools": [
     {
