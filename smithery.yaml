@@ -1,5 +1,5 @@
 name: soc2-compliance-ai-mcp
-description: '> **By [MEOK AI Labs](https://meok.ai)** -- Sovereign AI tools for everyone.'
+description: "\n        "
 version: 1.0.0
 tools:
 - name: assess_trust_principles
@@ -12,7 +12,7 @@ tools:
     type: array
     required: false
   - name: controls_implemented
-    type: object
+    type: array
     required: false
   - name: caller
     type: string
