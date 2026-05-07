@@ -1,3 +1,5 @@
+[![soc2-compliance-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/soc2-compliance-ai-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/soc2-compliance-ai-mcp)
+
 <div align="center">
 
 [![PyPI](https://img.shields.io/pypi/v/soc2-compliance-ai-mcp)](https://pypi.org/project/soc2-compliance-ai-mcp/)
