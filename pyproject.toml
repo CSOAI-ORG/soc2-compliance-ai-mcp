@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "soc2-compliance-ai-mcp"
-version = "1.0.0"
+version = "1.0.3"
 description = "MCP server for soc2 compliance ai. Features assess trust principles, control gap analysis, generate control matrix. From MEOK AI Labs."
 license = {file = "LICENSE"}
 requires-python = ">=3.10"
