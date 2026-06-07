@@ -1,0 +1,77 @@
+{
+  "name": "soc2-compliance-ai-mcp",
+  "description": "Soc2 Compliance Ai MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/soc2-compliance-ai-mcp.html",
+  "version": "1.0.10",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "assess_trust_principles",
+      "name": "Assess Trust Principles",
+      "description": "assess_trust_principles via soc2-compliance-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "control_gap_analysis",
+      "name": "Control Gap Analysis",
+      "description": "control_gap_analysis via soc2-compliance-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "generate_control_matrix",
+      "name": "Generate Control Matrix",
+      "description": "generate_control_matrix via soc2-compliance-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "risk_assessment",
+      "name": "Risk Assessment",
+      "description": "risk_assessment via soc2-compliance-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "crosswalk_to_iso27001",
+      "name": "Crosswalk To Iso27001",
+      "description": "crosswalk_to_iso27001 via soc2-compliance-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "readiness_checklist",
+      "name": "Readiness Checklist",
+      "description": "readiness_checklist via soc2-compliance-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "soc2-compliance-ai-mcp",
+    "description": "Soc2 Compliance Ai MCP Server by MEOK AI Labs",
+    "version": "1.0.10",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "soc2-compliance-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "assess_trust_principles",
+      "control_gap_analysis",
+      "generate_control_matrix",
+      "risk_assessment",
+      "crosswalk_to_iso27001",
+      "readiness_checklist"
+    ]
+  }
+}
