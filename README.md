@@ -8,6 +8,17 @@
 [![PyPI](https://img.shields.io/badge/PyPI-Install-3775a9)](https://pypi.org/project/soc2_compliance_ai_mcp/)
 
 > SOC 2 Type II compliance MCP — Trust Service Criteria audit, access review, change management, co...
+mcp-name: io.github.CSOAI-ORG/soc2-compliance-ai-mcp
+
+<div align="center">
+
+# SOC 2 Compliance MCP
+
+**SOC 2 Trust Service Criteria — Security, Availability, Processing Integrity, Confidentiality, Privacy**
+
+[![MCP](https://img.shields.io/badge/MCP-Server-blue)](https://github.com/CSOAI-ORG)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+</div>
 
 SOC 2 Type II compliance MCP — Trust Service Criteria audit, access review, change management, control evidence automation.
 
@@ -78,3 +89,77 @@ MIT © [CSOAI-ORG](https://github.com/CSOAI-ORG)
 <p align="center">
   <sub>Built with 💜 by <a href="https://meok.ai">MEOK AI Labs</a> · UK Companies House 16939677</sub>
 </p>
+AI-powered SOC 2 compliance automation covering all five Trust Service Criteria. Assess controls, generate control matrices, identify gaps, and produce audit-ready documentation.
+
+## Tools
+
+| Tool | Description | Parameters |
+|------|-------------|------------|
+| `assess_trust_principles` | Assess controls against all 5 TSC principles | `principle`, `controls` |
+| `control_gap_analysis` | Identify gaps between existing controls and SOC 2 | `current_controls`, `principle` |
+| `generate_control_matrix` | Generate a SOC 2 control matrix | `principle`, `controls`, `evidence` |
+| `audit_readiness` | Overall SOC 2 audit readiness score | `all_controls`, `principles` |
+| `evidence_checklist` | Generate evidence checklist by principle | `principle` (str, required) |
+| `remediation_plan` | Prioritized remediation plan for gaps | `findings`, `timeline` |
+
+## Installation
+
+```bash
+pip install mcp
+```
+
+### Claude Desktop / Cursor / VS Code / Windsurf
+```json
+{
+  "mcpServers": {
+    "soc2-compliance": {
+      "command": "python",
+      "args": ["path/to/server.py"]
+    }
+  }
+}
+```
+
+## Usage Examples
+
+### Assess security principle
+```json
+{
+  "principle": "security",
+  "controls": ["firewall", "encryption", "access control", "no monitoring"]
+}
+```
+
+### Generate control matrix
+```json
+{
+  "principle": "availability",
+  "controls": ["redundant servers", "backup power", "DR plan"],
+  "evidence": ["uptime reports", "DR test results"]
+}
+```
+
+## Pricing
+
+- **Free:** 10 assessments/day
+- **Pro:** $99/mo — unlimited assessments + matrices
+- **Enterprise:** $499/mo — full audit trail + readiness scoring
+
+---
+
+*Built by MEOK AI Labs | [meok.ai](https://meok.ai)*
+
+<!-- BUY-LADDER:START -->
+
+## 💸 Try MEOK in 30 seconds — instant buy ladder
+
+| Tier | Price | What you get | Stripe |
+|---|---|---|---|
+| Smoke test | **£1** | Signed sample MCP-Hardening report + Article 50 PDF | <https://buy.stripe.com/dRmcN75ScdQS7oh1Uc8k90U> |
+| Quick Kit | **£9** | EU AI Act Article 50 implementation guide (C2PA + EU-Icon) | <https://buy.stripe.com/cNi00la8s1460ZT0Q88k90V> |
+| Founder Call | **£29** | 30-min 1-on-1 with the founder | <https://buy.stripe.com/8x228ta8s6oqbExaqI8k90W> |
+
+> Refundable. UK Stripe — VAT-clean. Builds on the 81-MCP MEOK fleet.
+> Verify any signed report at <https://meok.ai/verify>.
+
+<!-- BUY-LADDER:END -->

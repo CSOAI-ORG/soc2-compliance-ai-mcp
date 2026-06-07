@@ -24,7 +24,6 @@ from typing import Optional
 
 from mcp.server.fastmcp import FastMCP
 import sys, os
-sys.path.insert(0, os.path.expanduser("~/clawd/meok-labs-engine/shared"))
 from auth_middleware import check_access
 
 # Tier authentication (connects to Stripe subscriptions)
@@ -305,7 +304,7 @@ def assess_trust_principles(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://csoai.org"}
     if err := _check_rate_limit(caller, tier):
         return {"error": err}
 
@@ -415,7 +414,7 @@ def control_gap_analysis(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://csoai.org"}
     if err := _check_rate_limit(caller, tier):
         return {"error": err}
 
@@ -558,7 +557,7 @@ def generate_control_matrix(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://csoai.org"}
     if err := _check_rate_limit(caller, tier):
         return {"error": err}
 
@@ -679,7 +678,7 @@ def risk_assessment(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://csoai.org"}
     if err := _check_rate_limit(caller, tier):
         return {"error": err}
 
@@ -790,7 +789,7 @@ def crosswalk_to_iso27001(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://csoai.org"}
     if err := _check_rate_limit(caller, tier):
         return {"error": err}
 
@@ -874,7 +873,7 @@ def readiness_checklist(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://csoai.org"}
     if err := _check_rate_limit(caller, tier):
         return {"error": err}
 
@@ -985,5 +984,8 @@ def readiness_checklist(
 # ---------------------------------------------------------------------------
 # Entry point
 # ---------------------------------------------------------------------------
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()

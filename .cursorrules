@@ -1,0 +1,9 @@
+# soc2-compliance-ai-mcp - Auto-trigger Rules
+
+When the user asks about soc2 compliance, use soc2-compliance-ai-mcp tools: assess_trust_principles, control_gap_analysis, generate_control_matrix, risk_assessment, crosswalk_to_iso27001
+
+**MCP server for soc2 compliance ai mcp operations**
+
+Install: `pip install soc2-compliance-ai-mcp`
+
+By MEOK AI Labs — MIT licensed.

@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "soc2-compliance-ai-mcp"
-version = "1.0.5"
+version = "1.0.10"
 readme = "README.md"
 description = "MCP server for soc2 compliance ai. Features assess trust principles, control gap analysis, generate control matrix. From MEOK AI Labs."
 license = {file = "LICENSE"}
@@ -20,12 +20,12 @@ classifiers = [
 dependencies = ["mcp>=1.0.0"]
 
 [project.urls]
-Homepage = "https://meok.ai"
+Homepage = "https://csoai.org"
 Repository = "https://github.com/CSOAI-ORG/soc2-compliance-ai-mcp"
 
 [tool.hatch.build.targets.wheel]
 packages = ["."]
-only-include = ["server.py"]
+only-include = ["server.py", "auth_middleware.py"]
 
 [project.scripts]
 soc2_compliance_ai_mcp = "server:main"

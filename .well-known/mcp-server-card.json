@@ -1,0 +1,31 @@
+{
+  "name": "soc2-compliance-ai-mcp",
+  "title": "Soc2 Compliance Ai Mcp",
+  "description": "MCP server for soc2 compliance ai. Features assess trust principles, control gap analysis, generate control matrix. From MEOK AI Labs.",
+  "version": "1.0.10",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "assess_trust_principles"
+    },
+    {
+      "name": "control_gap_analysis"
+    },
+    {
+      "name": "generate_control_matrix"
+    },
+    {
+      "name": "risk_assessment"
+    },
+    {
+      "name": "crosswalk_to_iso27001"
+    },
+    {
+      "name": "readiness_checklist"
+    }
+  ]
+}

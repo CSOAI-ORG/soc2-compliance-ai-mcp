@@ -1,0 +1,10 @@
+{
+  "name": "SOC2 Compliance",
+  "description": "SOC2 readiness assessment, controls mapping, and evidence collection",
+  "vendor": "MEOK AI Labs",
+  "sourceUrl": "https://github.com/CSOAI-ORG/soc2-compliance-ai-mcp",
+  "homepage": "https://meok.ai/mcp/soc2-compliance-ai-mcp",
+  "license": "MIT",
+  "runtime": "python",
+  "entryPoint": "server.py"
+}

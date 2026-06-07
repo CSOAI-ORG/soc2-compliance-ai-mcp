@@ -1,0 +1,39 @@
+# soc2-compliance-ai-mcp
+# **MCP server for soc2 compliance ai mcp operations**
+
+## Install
+```bash
+pip install soc2-compliance-ai-mcp
+```
+
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
+
+## Tools
+
+### `assess_trust_principles`
+Audit an AI system against the 5 SOC 2 Trust Service Criteria: Security
+
+### `control_gap_analysis`
+Gap analysis against SOC 2 controls. Compares implemented controls to
+
+### `generate_control_matrix`
+Generate a SOC 2 control matrix with control objectives, criteria,
+
+### `risk_assessment`
+SOC 2 risk assessment per AICPA guidelines. Identifies risks to Trust
+
+### `crosswalk_to_iso27001`
+Map SOC 2 controls to ISO 27001 Annex A controls. Shows how SOC 2
+
+### `readiness_checklist`
+SOC 2 Type I/II readiness assessment. Generates a comprehensive
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.
