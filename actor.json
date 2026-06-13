@@ -1,0 +1,10 @@
+{
+  "name": "knowing_yucca/soc2-compliance-ai-mcp",
+  "title": "MEOK Soc2 Compliance Ai Mcp",
+  "description": "Compliance MCP server",
+  "categories": [
+    "AI",
+    "Compliance"
+  ],
+  "isPublic": true
+}
