@@ -1,0 +1,17 @@
+{
+  "name": "knowing_yucca/soc2-compliance-ai-mcp",
+  "title": "MEOK Soc2 Compliance Ai Mcp",
+  "description": "Compliance MCP server: soc2-compliance-ai-mcp",
+  "readme": "# MEOK Soc2 Compliance Ai Mcp\n\nCompliance MCP from MEOK AI.",
+  "categories": [
+    "AI",
+    "Compliance",
+    "Governance"
+  ],
+  "defaultRunInput": {
+    "tool": "quick_scan",
+    "arguments": {
+      "system": "example"
+    }
+  }
+}
