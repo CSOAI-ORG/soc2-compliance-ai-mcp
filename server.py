@@ -974,7 +974,7 @@ def readiness_checklist(
         "estimated_cost_range_usd": {
             "audit_fees": "$20,000 - $100,000" if audit_type == "type2" else "$15,000 - $50,000",
             "remediation": "$10,000 - $50,000" if organization_maturity != "high" else "$5,000 - $15,000",
-            "tooling": "$5,000 - $30,000/year (GRC platform, monitoring tools)",
+            "tooling": "$5,000 - a per-job quote (GRC platform, monitoring tools)",
         },
     }
 
@@ -1013,10 +1013,10 @@ if __name__ == '__main__':
     main()
 
 
-# ── MEOK monetization layer (Stripe upgrade · PAYG · pricing) ──────────
-# Free tier is zero-config. Upgrade to Pro (unlimited) or pay-as-you-go per call.
+# ── MEOK pricing pointer (pay per delivered job; no subscriptions) ──────────
+# No tiers. Jobs are quoted individually at https://meok.ai/pricing.
 import os as _meok_os
-MEOK_STRIPE_UPGRADE = "https://buy.stripe.com/5kQ6oJ0xS3ce8sl7ew8k91j"  # Pro (unlimited)
+MEOK_STRIPE_UPGRADE = "https://meok.ai/pricing"  # Pro (unlimited)
 MEOK_PAYG_KEY = _meok_os.environ.get("MEOK_PAYG_KEY", "")  # set to enable PAYG (x402 / ~GBP0.05 per call)
 MEOK_PRICING = "https://meok.ai/pricing"
 
